@@ -47,7 +47,7 @@ func (t source) Token() (*oauth2.Token, error) {
 	if t.token == nil || t.token.Expiry.Sub(Now()) < t.refreshTTL {
 		token, err := t.Config.Token(ctx)
 		if err != nil {
-			return nil, fmt.Errorf("could not retirve a new token: %w", err)
+			return nil, fmt.Errorf("could not retrieve a new token: %w", err)
 		}
 
 		t.token = token
